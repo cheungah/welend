@@ -1,10 +1,39 @@
 <html>
-    <head>
-    </head>
-    <body>
-<script type="text/javascript" src="https://cdn.crowdtwist.com/trck/prod/2/217/v2/1653975630/actions"></script>
-	<script type="text/javascript">
-           ct_trck_upload_personal_loan_document({});
-        </script>
-    </body>
+<head>
+<script type="text/javascript" language="javascript">
+
+function send()
+{
+    var urlvariable;
+
+    urlvariable = "text";
+
+    var ItemJSON;
+
+    ItemJSON = '[{"activity_id":"410109621"  }]';
+
+    URL = https://api217.crowdtwist.com/v2/users/icshk002+Jenny.Cheung1@gmail.com/activities?api_key=2FJQiWvADwF1NHME8V7B3UmzhzyfGGUn&id_type=email;  //Your URL
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+    xmlhttp.open("POST", URL, false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+//    xmlhttp.setRequestHeader('Authorization', 'Basic ' + window.btoa('apiusername:apiuserpassword')); //in prod, you should encrypt user name and password and provide encrypted keys here instead 
+    xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+    xmlhttp.send(ItemJSON);
+    alert(xmlhttp.responseText);
+    document.getElementById("div").innerHTML = xmlhttp.statusText + ":" + xmlhttp.status + "<BR><textarea rows='100' cols='100'>" + xmlhttp.responseText + "</textarea>";
+}
+
+function callbackFunction(xmlhttp) 
+{
+    //alert(xmlhttp.responseXML);
+}
+</script>
+</head>
+<body id='bod'><button type="submit" onclick="javascript:send()">Upload Document</button>
+<div id='div'>
+
+</div></body>
 </html>
+
